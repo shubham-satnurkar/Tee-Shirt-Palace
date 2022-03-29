@@ -219,13 +219,266 @@ body{padding-top: 120px;}
 
 // featured-product Sction start
 .featured-product{
-    padding: 100px 0;
+    padding: 100px 0; overflow: hidden;
     .sub-heading{
         font-size: 2.25rem;color: $link-hover;position: relative;
+        margin-bottom: 50px;
         &::before{
             content:"";width: 3.5%;height: 2px;background-color: $link-hover;
             position: absolute; top: 50%; left: -50px;
         }
     }
+    .product-slider{ 
+        display: flex; align-items: center;
+        .card{
+            border: none;cursor: pointer; padding: 30px 0 10px;
+            #heart{
+                position: absolute;top: 5px;right: 10px;font-size: 1.5rem;color: rgba($black, .35);
+                visibility: hidden;
+            }
+            .card-body{
+                position: relative;
+                .card-title{
+                    @include flexbox; align-items: center; justify-content: center;
+                    font-size: 1rem; font-family: $robo-med;color: $white;
+                    background-color: rgba($black, .65); padding: 25px 0;
+                    position: absolute; top: -70px; width: 100%;left: 0;
+                    visibility: hidden;text-transform: uppercase
+                }
+                .color{
+                    @include flexbox; align-items: center; margin-bottom: 10px;
+                    .box{
+                        width: 15px;height: 15px;background-color: $black;
+                        &.green{background-color: #AACB23;margin: 0 10px;}
+                        &.red{background-color: #BA3030;}
+                    }
+                    .color-count{font-size: 1rem;font-family: $robo-med;margin:0 0 0 10px;color: $black;}
+                }
+                .card-text{font-size: 1rem;font-family: $robo-reg;color: $black;margin-bottom: 5px;}
+            }
+    
+            &:hover{
+                #heart{visibility: visible;}
+                box-shadow: 0 0 10px rgba($black, .2);
+                .card-title{visibility: visible;}
+            }
+        }
+        .slick-next{
+            box-shadow: 0 0 5px rgba($black, .3);
+            &::before{
+                content: '\f105';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: var(--fa-display,inline-block);
+                font-style: normal; font-variant: normal;
+                line-height: 1; text-rendering: auto;
+                font-size: 1rem;color: $black;
+            }
+         }
+        .slick-prev{
+            box-shadow: 0 0 5px rgba($black, .3);
+            &::before{
+                content: "\f104";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: var(--fa-display,inline-block);
+                font-style: normal; font-variant: normal;
+                line-height: 1;text-rendering: auto;
+                font-size: 1rem;color: $black;
+            }
+        }
+    }
+
 }
 // featured-product Sction end
+
+
+
+// Services Cards Section Start
+.services{
+   padding: 100px 0;position: relative;
+    overflow: hidden;
+    
+    .block{
+        text-align: center;position: relative; display: block; text-decoration: none;
+        overflow: hidden; transition: 1s; height: 100%; box-shadow: 0 0 10px rgba($black, .4);
+
+        .front{
+            width: 100%;padding: 72px 20px; @include flexbox;flex-direction: column;
+            justify-content: center;align-items: center;
+            background-color: $link-hover;
+            .title{
+                font-size: 1.25rem;font-family: $robo-med;
+                margin: 20px 0;color: $white;height: 100%;
+            }
+        }
+        .back{
+            width: 100%;padding: 50px 20px 20px;@include flexbox;flex-direction: column;
+            justify-content: center;align-items: center;
+             position: absolute;
+            background-color: $white;bottom: 100%;
+            transition: bottom 0.5s ease;
+            .title{
+                font-size: 1.25rem;font-family: $robo-med;
+                margin: 20px 0;color: $link-hover;
+            }
+            .text{
+                color: $black;font-size: 1rem; font-family: $robo-reg;
+            }
+        }
+        &:hover{
+            .back{bottom: 0;}
+        }
+    }
+
+    ::after{
+        content: '';width: 100%;position: absolute; height: 50%;
+        background-color: $black;top: 25%;left: 0;z-index: -1;
+    }
+}
+// Services Cards Section End
+
+// Subscribe Form Section Start
+.subscribe{
+    background: url(../img/texture-bg-img.jpg)no-repeat;
+    background-size: 100%; padding: 100px 0; margin-bottom: 80px;
+    .form{
+        background-color: $white;padding:60px; width: 100%;
+        .form-group{
+            margin-bottom: 1rem;
+            .form-label{font-size: 1rem;font-family: $robo-reg;color: $black;}
+            .form-control{
+                border: 1px solid $btn-color; box-shadow: none;height: 45px;
+            }
+            .btn-warning{
+                padding: 8px 50px;font-size: 1rem;font-family: $robo-bold;;
+                text-transform: uppercase;color: $white;
+                background-color: $btn-color;border: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+// Subscribe Form Section End
+
+// T-Shirt Of The Weeek Section Sart
+.weekly-offer{
+    background: url(../img/week-offer-bg.jpg)no-repeat;
+    background-size: 100%; text-align: left; padding: 10px 0; overflow: hidden;
+    .sec-1{
+        padding:150px 0 60px 50px; align-self: center;text-align:justify;
+        .text{font-size: 1.125rem;color: $white;font-family: $robo-reg;line-height: 30px;}
+    }
+    .sec-2{
+        padding: 100px 0 100px 80px;
+        .main-title{font-size: 6rem;font-family: $copycat; color: $white;}
+        .sub-title{font-size: 4.125rem;font-family: $friday-stroke;margin: 10px 0;}
+        .btn-dark{
+            font-size: 1rem;font-family: $robo-med;text-transform: uppercase;
+            padding: 8px 50px;box-shadow: none;
+            background-color: $black;
+        }
+    }
+}   
+// T-Shirt Of The Weeek Section End
+
+// Unique T-shirt section Start
+.unique-shirts{
+    position: relative; padding: 50px 0; overflow-x: hidden;
+    .girl-img{width: 35%;}
+    .red-bg{width: 75%;position: absolute;right: 20px;}
+
+    .content{
+        padding: 20px 30px; text-align: center;
+        position: absolute;z-index: 1;top: 20%;left: 40%;
+        color: $white;
+        .title{font-size: 1.875rem;font-family: $raphtalia;line-height: 40px;margin-bottom: 10px;}
+        .text{font-size: 1rem;font-family: $robo-med;}
+        .btn{
+            @include btn;background-color: transparent;width: 50%;
+            border: 1px solid $white; margin-top: 10px;
+
+            &:hover{
+                background-color: $btn-color;
+            }
+        }
+    }
+}
+// Unique T-shirt section End
+
+// Quick Buy Slider Section Start
+.quick-buy{
+    overflow: hidden; padding: 50px 0;
+    .heading{
+        padding-left: 85px; margin-bottom: 20px;
+        .title{font-size: 1.125rem;font-family: $robo-med; text-transform: uppercase;}
+        
+    }
+    .item-slider{
+        @include flexbox;justify-content: space-between;background-color: $black;
+        align-items: center;
+
+        .items{
+            display: block; padding:40px 30px 30px;
+            @include flexbox; flex-direction: column;
+            justify-content: center;align-items: center;
+            text-decoration: none;
+            .title{
+                font-size: .875rem;font-family: $robo-reg;text-transform: uppercase;margin-top: 10px;color: $white;
+                
+            }
+        }
+    }
+}
+// Quick Buy Slider Section End
+
+// Footer SEction Start
+.footer{
+    background-color: $black; padding-top: 55px;
+    .block{
+        .foot-title{
+            font-size: 1rem;font-family: $robo-reg;
+            margin-bottom: 20px;color: $white;
+            text-transform: uppercase;
+        }
+        .foot-list{
+            .foot-item{ 
+                margin-bottom: 10px;
+                .foot-link{
+                    font-size: .9rem;color: rgba($white, .5);
+                    font-family: $robo-reg; text-decoration: none;
+                    text-transform: uppercase; padding: 5px 0;
+                    &:hover{color: $white;}
+                }
+            }
+        }
+
+        .social{
+            @include flexbox; justify-content: space-between; margin-bottom: 20px;
+            &__link{
+                color: $white;font-size: 1.25rem;color: rgba($white, .5);
+                &:hover{color: $white;}
+            }   
+        }
+        .google-review{
+            @include flexbox; justify-content: flex-start; align-items: center;
+            .img-fluid{margin-right: 15px;}
+            .rate{
+                display: flex;flex-direction: column;
+                .star{
+                    font-size: .875rem;display: flex;align-items: center;
+                     justify-content: space-between;
+                     .fa-star{color: rgba($white, .5);}
+                    .rate-count{margin-bottom: 0;font-size: .875rem;color: $white;}
+                    border-bottom: 1px solid rgba($white, .5);padding: 5px 0;
+                }
+                .review-text{font-size: .875rem;color: $white;padding: 5px 0;}
+            }
+        }
+    }
+}
+// Footer SEction End

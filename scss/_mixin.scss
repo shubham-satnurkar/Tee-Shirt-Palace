@@ -17,11 +17,29 @@
     font-family:Roboto-Black;
     src: url(../fonts/Roboto-Black.ttf);
 }
+@font-face {
+    font-family:Copycat-759;
+    src: url(../fonts/Copycat-759.ttf);
+}
+@font-face {
+    font-family:the-friday-stroke;
+    src: url(../fonts/the-friday-stroke.otf);
+}
 
-
+@font-face {
+    font-family:Raphtalia;
+    src: url(../fonts/Raphtalia.ttf);
+}
 
 
 @mixin flexbox {
     display: flex; justify-content: flex-start;
     align-items: center; flex-wrap: wrap;
+}
+
+@mixin btn {
+    font-size: 1rem;;font-family: $robo-med;
+    padding: 8px 40px;background-color: $btn-color;
+    text-transform: uppercase;box-shadow: none;
+    color: $white;
 }
