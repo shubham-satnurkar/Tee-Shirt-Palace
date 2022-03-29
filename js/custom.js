@@ -116,4 +116,16 @@ $(document).ready(function () {
     })
     // Quick Buy Items Slider End
 
+
+    // your T-shirt your idea section start
+    $(".design-idea-slider").slick({
+        dot: false,
+        arrow:true,
+        speed : 300,
+        autoplay:true,
+        autoplaySpeed:1000,
+        infinite:true,
+    })
+    // your T-shirt your idea section end
+
 });
