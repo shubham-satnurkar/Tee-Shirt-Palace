@@ -1,0 +1,231 @@
+@import 'mixin';
+@import 'variable';
+body{padding-top: 120px;}
+.container{
+    max-width: 1200px;
+}
+
+// Header section start
+.header{ 
+    background-color: $white; box-shadow: 0px 3px 5px rgba($black, .2);
+    .top-strip{
+        background-color: $black;
+        color: #fff;padding: 7px 0;
+        .text{font-size: .875rem;margin: 0;}
+    }
+    .navbar{
+        padding: 20px 0;
+        &-brand{
+            width: 200px;height: 50px;
+        }
+        .navbar-toggler {
+            background-color: red;
+            .navbar-toggler-icon{background: url(../img/list.svg)no-repeat center;background-size: 100%;}
+        }
+        .collapse{
+            .navbar-nav{
+                .nav-item{
+                    padding: 5px 10px;
+                    .nav-link{
+                        font-size: .875rem;color: $link-color;
+                        font-family:$robo-med;text-transform: uppercase;
+                        display: block;  padding: 8px 12px;  
+                        border-bottom: 2px solid transparent;
+                        &:hover{
+                            color: $link-hover;
+                            border-color: $link-hover;
+                        }                    
+                    }
+                    .bi{
+                        font-size: 1.125rem;font-weight: bold;
+                        color: $black;
+                        // &.bi-person{font-size: 1.5rem;}
+                        &:hover{color: $link-hover;}
+                    }
+                    .badge{
+                        background-color: $link-hover;
+                        top: 25px;left:15px;font-size: .6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+// Header section end
+
+// Hero Image section Start
+.hero_img{
+   .main-img{
+       background-color: #DDB429; 
+       .content{
+           position: absolute;top: 0;width: 100%;left: 0;
+           @include flexbox;
+           .display-1{
+               position: absolute;left: -150px;top: 45%;
+               transform: rotate(-90deg);font-size: 6.5rem;
+               line-height: 125px;font-family: $robo-black;
+               letter-spacing: 3px;color: rgba($link-hover, .7);
+           }
+           .card{
+               width: 55%;margin: 60px auto 0;border: none;
+               cursor: pointer;
+                .card-body{
+                    padding: 20px 16px; background-color: $black;
+                    .card-title{
+                        font-size: 1.875rem;text-transform: uppercase;
+                        font-family: $robo-black;color: $white;
+                        letter-spacing: 1px;margin-top: 10px;
+                    }
+                }
+
+               .top-bracket{
+                   position: absolute;top: -15px;right: -13px;
+               }
+               .bot-bracket{
+                position: absolute;bottom: -15px;left: -13px;
+            }
+           }
+       }
+   }
+   .sec-2{
+       .card{
+           position: relative; overflow: hidden; text-align: center;cursor: pointer;
+           .card-body{
+                position: absolute; background-color: rgba($link-hover, .75);
+                width: 100%;bottom: -87px;left: 0;transition: .5s;
+                color: $white; @include flexbox; justify-content: space-evenly;
+                .card-title{font-size: 1.30rem;font-family: $robo-bold;margin-bottom: 0;}
+                .card-text{font-size: .8rem;font-family: $robo-reg;}
+                .bi{font-size: 2rem;}
+
+           }
+
+           &:hover{
+               .card-body{bottom: 0;}
+           }
+       }
+   }
+}
+// Hero Image section End
+
+// Collection Section Start
+.collection{
+    padding: 100px 0;
+    .card{
+        position: relative;text-align:center; overflow: hidden;
+        cursor: pointer;
+        .card-body{
+            position: absolute;bottom: -20px;left: 0;width: 100%;
+            background-color: rgba($black, .65); padding: 25px 16px;
+            transition: .5s;
+            .card-title{
+                color: $white;font-family: $robo-bold;
+                span{font-family: $robo-reg;}
+            }
+            .icons{display: none;margin:0 auto 20px;}
+        }
+        &:hover{
+            .card-body{bottom: 0;}
+            .icons{display: flex;}
+        }
+    }
+}
+// Collection Section End
+
+// Slider Section Start
+.slider{
+    background-color: $black; padding: 100px 0;;
+    .carousel{
+        .card{
+             padding: 20px 100px 0; position: relative;
+            background-color: transparent;color: $white;border:none;
+            .card-body{
+                position: absolute;top: 20%;left: -50px; width: 50%;
+                .card-title{
+                    font-size: 2.625rem;text-transform: uppercase;position: relative;
+                    z-index: 100; font-weight: 400;line-height: 50px;margin-bottom: 20px;
+                    &::before{
+                        content:"";width: 15%;height: 2px;background-color: $white;
+                        position: absolute; top: 30%; left: -50px;
+                    }
+                }
+                .btn{
+                    font-size: 1.125rem;
+                    font-family: roboto;font-weight: bold; padding: 10px 30px;
+                    position: relative;border:none;z-index: 10;
+                    color: $white; box-shadow: none;
+
+                    &::before{
+                        content: '';
+                        position: absolute;top: 0;left: 0;width: 10%;height: 100%;
+                        background-color: #DDB429;transition: .5s;color: $white;
+                        z-index: -1;
+                    }
+                }
+            }
+            &:hover{
+                .card-body{
+                    .card-title{ z-index: 1000;}
+                    .btn{  
+                        &::before{width: 100%;z-index: -1;}
+                    }
+                }
+            }
+
+            &.slick-current{
+                box-shadow: 0 0 10px rgba($black, .3);
+            }
+        }
+        .slick-list{overflow: unset;}
+        .slick-next{
+            right: 200px;background-color: $white;top: unset; bottom: -100px;
+            width: 35px; height: 35px;z-index: 10;
+            border-radius: 50%; box-shadow: 0 0 10px rgba($black, .2);
+            &::before{
+                content: '\f105';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: var(--fa-display,inline-block);
+                font-style: normal; font-variant: normal;
+                line-height: 1; text-rendering: auto;
+                font-size: 1rem;color: $black;
+            }
+        }
+        .slick-prev{
+            left: 200px;background-color: $white;top: unset; bottom: -100px;
+            width: 35px; height: 35px;
+            border-radius: 50%; box-shadow: 0 0 10px rgba($black, .2);
+            z-index: 10;
+            &::before{
+                content: "\f104";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: var(--fa-display,inline-block);
+                font-style: normal; font-variant: normal;
+                line-height: 1;text-rendering: auto;
+                font-size: 1rem;color: $black;
+            }
+        }
+        &.slick-dotted.slick-slider{
+            .slick-dots{display: none!important;}
+        }
+    }
+}
+// Slider Section End
+
+// featured-product Sction start
+.featured-product{
+    padding: 100px 0;
+    .sub-heading{
+        font-size: 2.25rem;color: $link-hover;position: relative;
+        &::before{
+            content:"";width: 3.5%;height: 2px;background-color: $link-hover;
+            position: absolute; top: 50%; left: -50px;
+        }
+    }
+}
+// featured-product Sction end
