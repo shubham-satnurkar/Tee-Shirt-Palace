@@ -8,7 +8,7 @@ $(document).ready(function () {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1000,
-        dots: true,
+        dots: false,
         centerMode: true,
         responsive: [{
             breakpoint: 1024,
@@ -24,7 +24,7 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 2,
-                dots: true,
+                dots: false,
                 infinite: true,
 
             }
@@ -33,7 +33,7 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                dots: true,
+                dots: false,
                 infinite: true,
                 autoplay: true,
                 autoplaySpeed: 1000,
@@ -128,4 +128,64 @@ $(document).ready(function () {
     })
     // your T-shirt your idea section end
 
+
+
+    // Search Bar Onclick events...
+    $searchBtn = $(".searchBtn");
+    $closeBtn = $(".closeBtn");
+    $searchForm = $(".search-form");
+    // When click On Search Icon Search Bar Show and Cose Button Show
+    $searchBtn.on('click', function(){
+        $searchForm.addClass("show");
+        $searchBtn.hide();
+        $closeBtn.show();
+    });
+   // When click On Close Icon Search Bar hide and Cose Button hide
+    $closeBtn.on('click', function(){
+        $searchForm.removeClass("show");
+        $searchBtn.show();
+        $closeBtn.hide();
+    });
+    
+
+    
+});
+
+
+
+
+// Subscribe/ Join Us Form validation
+$subscibeForm = $("#subscribe");
+$emailNode=$("#email");
+$errorNode= $("#error");
+$border1 = "1px solid #f00";
+$border2 = "1px solid #0f0";
+
+function subscribe(){
+    $errorNode.text("");
+    email = $emailNode.val();
+    subStr = email.substring(email.indexOf('@')+1);
+    console.log(subStr);
+    if(email == ""){
+        $errorNode.text("this field is required");
+        $emailNode.css('border', $border1);
+        return false
+    }
+    else if(!email.includes('@') || subStr == ''){
+        $errorNode.text("Please Put Valid Email Id");
+        $emailNode.css('border', $border1);
+        return false
+    }
+    else{
+        $emailNode.css('border', $border2);
+        return true
+    }
+}
+
+function formValidate(){
+    let st1 = subscribe();
+    return st1;
+}
+$subscibeForm.submit(function(){
+    return formValidate();
 });

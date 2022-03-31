@@ -26,15 +26,15 @@
         <div class="container">
             <nav class="navbar ">
                 <div class="container-fluid">
-                    <a class="navbar-brand " href="index.html">
+                    <a class="navbar-brand order-lg-1 order-2" href="index.html">
                         <img src="img/logo.png" alt="logo" class="img-fluid ">
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse order-lg-2 order-4" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link active" href="javascript:void(0)">TRENDING TOPICS</a>
@@ -56,21 +56,24 @@
                             <li class="nav-item">
                                 <a href="javascript:void(0)" class="nav-link">HOME AND LIVING</a>
                             </li>
-
-                            <li class="nav-item border-end border-start">
-                                <button class="btn shadow-none" type="submit">
+                            <!-- Search Icon -->
+                            <li class="nav-item border-end border-start d-none d-lg-block">
+                                <button class="btn shadow-none searchBtn" type="button">
                                     <img src="img/search.svg" alt="search">
                                 </button>
-                                <form class="d-flex d-none">
-                                    <input class="form-control me-2" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                    <button class="btn btn-outline-success" type="submit">
-                                        <img src="img/search.svg" alt="search">
+                                <button class="btn shadow-none closeBtn" type="button">
+                                    <img src="img/close.svg" alt="close">
+                                </button>
+                                <form class="search-form ">
+                                    <input class="form-control me-2" type="search"
+                                        placeholder="What are you looking for?" aria-label="Search">
+                                    <button class="btn btn-search" type="submit">
+                                        <img src="img/search-icon.svg" alt="search-icon">
                                     </button>
                                 </form>
                             </li>
-
-                            <li class="nav-item position-relative">
+                            <!-- Fovorite Heart -->
+                            <li class="nav-item position-relative d-none d-lg-block">
                                 <a href="javascript:void(0)" class="nav-link">
                                     <img src="img/heart.svg" alt="heart">
                                 </a>
@@ -79,7 +82,8 @@
                                     <span class="visually-hidden">unread messages</span>
                                 </span>
                             </li>
-                            <li class="nav-item position-relative">
+                            <!-- Bag -->
+                            <li class="nav-item position-relative d-none d-lg-block">
                                 <a href="javascript:void(0)" class="nav-link">
                                     <img src="img/bag.svg" alt="bag">
                                 </a>
@@ -88,13 +92,52 @@
                                     <span class="visually-hidden">unread messages</span>
                                 </span>
                             </li>
-                            <li class="nav-item">
+                            <!-- User -->
+                            <li class="nav-item d-none d-lg-block">
                                 <a href="javascript:void(0)" class="nav-link">
                                     <img src="img/user.svg" alt="user">
                                 </a>
                             </li>
                         </ul>
                     </div>
+                    <ul class="list-unstyled mobile-nav ms-auto d-flex flex-row align-items-center mb-2 mb-lg-0  d-lg-none order-3">
+                        <!-- Search Icon -->
+                        <li class="nav-item border-end border-start">
+                            <button class="btn shadow-none searchBtn" type="button">
+                                <img src="img/search.svg" alt="search" class="img-fluid">
+                            </button>
+                            <button class="btn shadow-none closeBtn " type="button">
+                                <img src="img/close.svg" alt="close" class="img-fluid">
+                            </button>
+                            <form class="search-form">
+                                <input class="form-control me-2" type="search" placeholder="What are you looking for?"
+                                    aria-label="Search">
+                                <button class="btn btn-search" type="submit">
+                                    <img src="img/search-icon.svg" alt="search-icon" class="img-fluid">
+                                </button>
+                            </form>
+                        </li>
+                        <!-- Fovorite Heart -->
+                        <li class="nav-item position-relative">
+                            <a href="javascript:void(0)" class="nav-link">
+                                <img src="img/heart.svg" alt="heart" class="img-fluid">
+                            </a>
+                            <span class="position-absolute   translate-middle badge rounded-pill ">
+                                24
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </li>
+                        <!-- Bag -->
+                        <li class="nav-item position-relative">
+                            <a href="javascript:void(0)" class="nav-link">
+                                <img src="img/bag.svg" alt="bag" class="img-fluid">
+                            </a>
+                            <span class="position-absolute   translate-middle badge rounded-pill ">
+                                24
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </div>
@@ -105,25 +148,41 @@
     <section class="hero_img pt-3">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-5 main-img position-relative px-0">
-                    <img src="img/grid-img.png" alt="grid" class="h-100 img-fluid">
+                <div class="col-lg-5 col-12 main-img position-relative px-0 ">
+                    <img src="img/red-texture.jpg" alt="red-texture" class="img-fluid d-lg-none d-block w-100">
+                    <img src="img/grid-img.png" alt="grid" class="h-100 img-fluid d-lg-block d-none">
                     <div class="content">
-                        <div class="display-1">CREATE</div>
+                        <div class="display-1 d-lg-block d-none ">CREATE</div>
                         <div class="card text-center ">
-                            <span class="d-block top-bracket"><img src="img/top-right.svg" alt="top-bracket"></span>
+                            <span class="d-block top-bracket"><img src="img/top-right.svg" alt="top-bracket" class="img-fluid"></span>
                             <img src="img/img-1.png" alt="img-1" class="card-img">
-                            <div class="card-body ">
+                            <div class="card-body d-lg-block d-none">
                                 <img src="img/brush.svg" alt="brush" class="brush">
                                 <h3 class="card-title">Create</h3>
                             </div>
-                            <span class="d-block bot-bracket"><img src="img/bottom-left.svg" alt="bot-bracket"></span>
+                            <span class="d-block bot-bracket"><img src="img/bottom-left.svg" alt="bot-bracket" class="img-fluid"></span>
+                        </div>
+                        <div class="heading d-lg-none d-block">
+                            <h1 class="main-title">Create</h1>
+                            <h2 class="sub-title">Latest Collections</h2>
+                            <a href="javascript:void(0)" class="btn btn-outline-light">
+                                <img src="img/brush.svg" alt="brush" class="img-fluid me-md--3 me-2">
+                                Start Designing
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7 sec-2">
+                <div class="col-lg-7 col-12 sec-2 position-relative">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="row gap-2">
+                        <div class="col-lg-6 col-12 px-lg-3 px-0">
+                            <img src="img/grid-img.png" alt="grid" class="img-fluid d-lg-none d-block">
+                            <div class="heading d-lg-none d-block">
+                                <h1 class="main-title">Shop</h1>
+                                <h2 class="sub-title">Latest Collections</h2>
+                                <h4 class="sub-title">The Caption Edit</h4>
+                            </div>
+                            <img src="img/card-girl.png" alt="girl" class="img-fluid d-lg-none girl-img">
+                            <div class="row gap-2 d-lg-block d-none">
                                 <div class="col-12">
                                     <div class="card">
                                         <img src="img/img-2.png" alt="img-2" class="card-img">
@@ -136,7 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 ">
                                     <div class="card">
                                         <img src="img/img-2.png" alt="img-2" class="card-img">
                                         <div class="card-body">
@@ -150,7 +209,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6 d-lg-block d-none">
                             <div class="card">
                                 <img src="img/img-3.png" alt="img-3" class="card-img">
                                 <div class="card-body">
@@ -173,7 +232,7 @@
     <section class="collection ">
         <div class="container">
             <div class="row ">
-                <div class="col-md-4 col-sm-6 mb-3 ">
+                <div class="col-md-4 col-6 mb-3 ">
                     <div class="card">
                         <img src="img/col-1.png" alt="col-1" class="card-img">
                         <div class="card-body">
@@ -182,7 +241,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-3 ">
+                <div class="col-md-4 col-6 mb-3 ">
                     <div class="card">
                         <img src="img/col-2.png" alt="col-1" class="card-img">
                         <div class="card-body">
@@ -191,7 +250,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-3 ">
+                <div class="col-md-4 col-6 mb-3 ">
                     <div class="card">
                         <img src="img/col-3.png" alt="col-1" class="card-img">
                         <div class="card-body">
@@ -200,7 +259,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-3 ">
+                <div class="col-md-4 col-6 mb-3 ">
                     <div class="card">
                         <img src="img/col-4.png" alt="col-1" class="card-img">
                         <div class="card-body">
@@ -209,7 +268,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-3 ">
+                <div class="col-md-4 col-6 mb-3 ">
                     <div class="card">
                         <img src="img/col-5.png" alt="col-1" class="card-img">
                         <div class="card-body">
@@ -218,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 mb-3 ">
+                <div class="col-md-4 col-6 mb-3 ">
                     <div class="card">
                         <img src="img/col-6.png" alt="col-1" class="card-img">
                         <div class="card-body">
@@ -237,7 +296,7 @@
     <section class="main-slider overflow-hidden">
         <div class="container">
             <div class="row">
-                <div class="col-8  mx-auto carousel" id="mySlider">
+                <div class="col-md-8 col-sm-10 col-12  mx-auto carousel" id="mySlider">
                     <div class="card">
                         <img src="img/slide-1.png" alt="slide-1" class="card-img">
                         <div class="card-body">
@@ -500,7 +559,7 @@
                             <h3 class="card-title">Your T-shirt your Idea!</h3>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut. 
+                                tempor incididunt ut.
                             </p>
                             <a href="javascript:void(0)" class="btn d-block">Design Now</a>
                         </div>
@@ -514,7 +573,7 @@
                             <h3 class="card-title">Your T-shirt your Idea!</h3>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt ut. 
+                                tempor incididunt ut.
                             </p>
                             <a href="javascript:void(0)" class="btn d-block">Design Now</a>
                         </div>
@@ -529,7 +588,7 @@
     <section class="services">
         <div class="container">
             <div class="row ">
-                <div class="offset-md-2 offset-sm-1 col-md-4 col-sm-5  mb-4">
+                <div class="offset-lg-2 offset-md-1 col-lg-4 col-md-5  mb-4">
                     <a href="javascript:void(0)" class="block">
                         <div class="front">
                             <img src="img/hand-flower-front.svg" alt="hand-flower-front" class="img-fluid">
@@ -545,11 +604,11 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-5  mb-4">
+                <div class="col-lg-4 col-md-5  mb-4">
                     <a href="javascript:void(0)" class="block">
                         <div class="front">
                             <img src="img/batch-front.svg" alt="batch-front" class="img-fluid">
-                            <h5 class="title">High Quality Standards</h5>
+                            <h5 class="title">Official Licensed Apparel</h5>
                         </div>
                         <div class="back">
                             <img src="img/batch-back.svg" alt="batch-back" class="img-fluid">
@@ -561,11 +620,11 @@
                         </div>
                     </a>
                 </div>
-                <div class="offset-md-2 offset-sm-1 col-md-4 col-sm-5  mb-4">
+                <div class="offset-lg-2 offset-md-1 col-lg-4 col-md-5  mb-4">
                     <a href="javascript:void(0)" class="block">
                         <div class="front">
                             <img src="img/smily-front.svg" alt="smily-front" class="img-fluid">
-                            <h5 class="title">High Quality Standards</h5>
+                            <h5 class="title">Guaranteed Satisfaction</h5>
                         </div>
                         <div class="back">
                             <img src="img/smily-back.svg" alt="smily-back" class="img-fluid">
@@ -577,11 +636,11 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-5  mb-4">
+                <div class="col-lg-4 col-md-5  mb-4">
                     <a href="javascript:void(0)" class="block">
                         <div class="front">
                             <img src="img/caller-front.svg" alt="caller-front" class="img-fluid">
-                            <h5 class="title">High Quality Standards</h5>
+                            <h5 class="title">Amazing Customer Experience</h5>
                         </div>
                         <div class="back">
                             <img src="img/caller-back.svg" alt="caller-back" class="img-fluid">
@@ -603,12 +662,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form class="form" onsubmit="formValidate()" novalidate>
+                    <form class="form" id="subscribe" onsubmit="formValidate()" novalidate>
                         <div class="form-group">
                             <label for="Email" class="form-label">All of deals and updates in your inbox</label>
-                            <input type="email" class="form-control" placeholder="Enter Email">
-                            <div id="error" class="form-text d-none">We'll never share your email with anyone else.
-                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Enter Email"
+                                onblur="subscribe()">
+                            <div id="error" class="form-text "></div>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-warning">Join Us</button>
@@ -624,7 +683,7 @@
     <section class="weekly-offer">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-4  sec-1">
+                <div class="col-lg-4 col-md-5 col-6  sec-1">
                     <p class="text">
                         Lorem Ipsum is simply dummy text of the
                         printing and typesetting industry. Lorem
@@ -632,7 +691,7 @@
                         dummy text ever since the 1500s,
                     </p>
                 </div>
-                <div class="col-5  sec-2">
+                <div class="col-lg-5 col-md-6 col-6  sec-2">
                     <h1 class="main-title">T-SHIRT</h1>
                     <h2 class="sub-title">OF THE WEEK</h2>
                     <a href="javascript:void(0)" class="btn btn-dark">Shop Now</a>
@@ -650,7 +709,7 @@
                     <img src="img/girl-img.jpg" alt="girl-img" class="girl-img ">
 
                     <img src="img/red-background.png" alt="red-background" class=" red-bg ">
-                    <div class="content w-50">
+                    <div class="content">
                         <h4 class="title">Unique and Funny T-Shirts for Men, Women, Kids, and Babies</h4>
                         <p class="text">
                             Welcome to TeeShirtPalace, where our mission is simple: to help you show your personality,
@@ -760,8 +819,10 @@
                     <h6 class="foot-title">Terms</h6>
                     <ul class="list-unstyled foot-list">
                         <li class="foot-item"><a href="javascript:void(0)" class="foot-link">Privacy Policy</a></li>
-                        <li class="foot-item"><a href="javascript:void(0)" class="foot-link">Content Usage Policy</a></li>
-                        <li class="foot-item"><a href="javascript:void(0)" class="foot-link">Intellectual Property Policy</a></li>
+                        <li class="foot-item"><a href="javascript:void(0)" class="foot-link">Content Usage Policy</a>
+                        </li>
+                        <li class="foot-item"><a href="javascript:void(0)" class="foot-link">Intellectual Property
+                                Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 mb-3 block">
@@ -785,6 +846,30 @@
                             <h6 class="review-text">Customer Reviews</h6>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row copyright">
+                <div class="col-12 px-0">
+                    <div class="payment-gateway d-flex gap-md-3 gap-2 justify-content-center">
+                        <a href="javascript:void(0)" class="d-block">
+                            <img src="img/mastercard.svg" alt="mastercard" class="img-fluid">
+                        </a>
+                        <a href="javascript:void(0)" class="d-block">
+                            <img src="img/visa.svg" alt="visa" class="img-fluid">
+                        </a>
+                        <a href="javascript:void(0)" class="d-block">
+                            <img src="img/ame-express.svg" alt="ame-express" class="img-fluid">
+                        </a>
+                        <a href="javascript:void(0)" class="d-block">
+                            <img src="img/discover.svg" alt="discover" class="img-fluid">
+                        </a>
+                        <a href="javascript:void(0)" class="d-block">
+                            <img src="img/paypal.svg" alt="paypal" class="img-fluid">
+                        </a>
+                    </div>
+                    <h6 class="copy-text">Copyright &copy; 2019 - Tee Shirt Palace</h6>
                 </div>
             </div>
         </div>
